@@ -910,8 +910,8 @@
         "signature": "a58924798d183e01fb8cf3eb985b81f280167a2e98ab354eb4c91605ec76092c"
       },
       "/users/ryan/dev/jupyterlab-ext/text-shortcuts/src/index.ts": {
-        "version": "cd14b99809e2f959dfb32c7f8177e7c0e19ee023ccab86d4af85adbdaeaccf5f",
-        "signature": "9107fb3a369b76413e2fb38938692fbde7523ce7517b188e70e914d01794f2a1"
+        "version": "2d2d4e1a654baa81a119dd46a3ee9aecf7e0c15d80fa758e4137a27d2854dacd",
+        "signature": "102fdf9fc239b6b8cb096b4d33c57beebf673489fb6f39998bbf5ec72ec23f01"
       }
     },
     "options": {
