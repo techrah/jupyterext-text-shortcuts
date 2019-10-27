@@ -10,7 +10,48 @@ Insert text via shortcuts.
 ## Installation
 
 ```bash
-jupyter labextension install text-shortcuts
+jupyter labextension install @techrah/text-shortcuts
+```
+
+or add it through your Jupyter Lab **Extensions** tab.
+
+Then, add some user shortcuts:
+
+- In Jupyter Lab, select **Settings** / **Advanced Settings Editor** from the menu.
+
+- Select the **Keyboard Shortcuts** tab.
+
+- In the **User Preferences** section, add your shortcuts configuration and click the Save icon.
+ 
+Here are two useful shortcuts for programming in R:
+
+```json
+{
+    "shortcuts": [
+        {
+            "command": "text-shortcuts:insert-text",
+            "args": {
+                "text": "%>%",
+                "autoPad": true
+            },
+            "keys": [
+                "Accel Shift M"
+            ],
+            "selector": "body"
+        },
+        {
+            "command": "text-shortcuts:insert-text",
+            "args": {
+                "text": "<-",
+                "autoPad": true
+            },
+            "keys": [
+                "Alt -"
+            ],
+            "selector": "body"
+        }
+    ]
+}
 ```
 
 ## Development
