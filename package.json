@@ -1,6 +1,6 @@
 {
-  "name": "text-shortcuts",
-  "version": "0.1.0",
+  "name": "@techrah/text-shortcuts",
+  "version": "0.0.1",
   "description": "Insert text via shortcuts.",
   "keywords": [
     "jupyter",
