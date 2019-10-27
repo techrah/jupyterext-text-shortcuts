@@ -6,6 +6,7 @@ Insert text via shortcuts.
 ## Prerequisites
 
 * JupyterLab
+* [node 5+](https://nodejs.org)
 
 ## Installation
 
@@ -21,8 +22,8 @@ Then, add some user shortcuts:
 
 - Select the **Keyboard Shortcuts** tab.
 
-- In the **User Preferences** section, add your shortcuts configuration and click the Save icon.
- 
+- In the **User Preferences** section, add your shortcuts configuration and click the "save" icon.
+
 Here are two useful shortcuts for programming in R:
 
 ```json
