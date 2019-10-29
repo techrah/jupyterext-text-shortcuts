@@ -1,7 +1,7 @@
 {
   "name": "@techrah/text-shortcuts",
-  "version": "0.0.2",
-  "description": "Insert text via shortcuts.",
+  "version": "0.0.3",
+  "description": "Insert text via shortcut keys in Jupyer Lab.",
   "keywords": [
     "jupyter",
     "jupyterlab",
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/ryanhomer/jupyterext-text-shortcuts/issues"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "author": "Ryan Homer",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
