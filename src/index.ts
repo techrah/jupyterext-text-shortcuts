@@ -4,7 +4,6 @@ import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin,
 } from '@jupyterlab/application';
-import { IEditorTracker } from '@jupyterlab/fileeditor';
 import { INotebookTracker } from '@jupyterlab/notebook';
 
 const insertText = (tracker: INotebookTracker) => (args: any) => {
@@ -55,7 +54,7 @@ const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {
 const extension: JupyterFrontEndPlugin<void> = {
   id: 'text-shortcuts',
   autoStart: true,
-  requires: [INotebookTracker, IEditorTracker],
+  requires: [INotebookTracker],
   activate: handleActivation,
 };
 
