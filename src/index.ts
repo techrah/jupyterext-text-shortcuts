@@ -43,11 +43,9 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
 };
 
 const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {
-  tracker.currentChanged.connect(tracker => {
-    app.commands.addCommand("text-shortcuts:insert-text", {
-      label: 'Insert Text',
-      execute: insertText(tracker),
-    });
+  app.commands.addCommand("text-shortcuts:insert-text", {
+    label: 'Insert Text',
+    execute: insertText(tracker),
   });
 };
 
