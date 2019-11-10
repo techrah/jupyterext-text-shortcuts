@@ -28,7 +28,7 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
   // Determine replacementText by adjust padding based on text selection
   const selectionAfter = doc.getSelection();
   let replacementText;
-  if(selectionBefore.length === 0) {
+  if (selectionBefore.length === 0) {
     if (anchor.ch == 0) replacementText = `${textToInsert}${selectionAfter}`;
     else if (anchor.ch == lineLength) replacementText = `${selectionAfter}${textToInsert}`;
     else replacementText = `${selectionAfter.charAt(0)}${textToInsert}${selectionAfter.charAt(1)}`;
@@ -39,6 +39,7 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
   replacementText = replacementText.replace(/^(.*[ ])[ ]$/, "$1");
 
   doc.replaceSelection(replacementText);
+  doc.setCursor({ line: from.line, ch: from.ch + textToInsert.length });
 };
 
 const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {
