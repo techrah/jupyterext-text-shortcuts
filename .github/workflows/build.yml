@@ -26,9 +26,7 @@ jobs:
       - name: Install JS dependencies and build
         run: jlpm
 
-      - name: Bump version
+      - name: Automated Version Bump
         uses: "phips28/gh-action-bump-version@v5.0.18"
-        with:
-          tag-prefix: ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
