@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-18.04
 
-    name: n${{ matrix.node-version }}/py${{ matrix.python-version }})
+    name: n${{ matrix.node-version }}/py${{ matrix.python-version }}/j${{ matrix.jupyterlab-version}}
 
     strategy:
       matrix:
