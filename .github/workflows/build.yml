@@ -1,0 +1,22 @@
+name: build
+
+on:
+  push:
+    branches: [test]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+
+      - uses: actions/checkout@v2
+      - run: jlpm
