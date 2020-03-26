@@ -27,7 +27,7 @@ jobs:
         run: jlpm
 
       - name: Bump version
-        uses: "phips28/gh-action-bump-version@master"
+        uses: "phips28/gh-action-bump-version@v5.0.18"
         with:
           tag-prefix: ''
         env:
