@@ -1,9 +1,8 @@
 # text-shortcuts
 
-Insert text via shortcuts.
+A jupyterlab extension to insert text via keyboard shortcuts.
 
-
-## Prerequisites
+## Pre-requisites
 
 * JupyterLab
 * [node 5+](https://nodejs.org)
@@ -57,18 +56,44 @@ Here are two useful shortcuts for programming in R:
 
 ## Development
 
-For a development install (requires npm version 4 or later), do the following in the repository directory:
+### Pre-requisites
 
-```bash
-npm install
-npm run build
-jupyter labextension link .
-```
+- node 5+
+- Python 3.6+
 
-To rebuild the package and the JupyterLab app:
+It is strongly recommended that you set up a virtual Python environment. These instructions will assume that Anaconda is already installed.
 
-```bash
-npm run build
-jupyter lab build
-```
+- Create a new virtual environment
 
+  ```bash
+  conda create --name text-shortcuts
+  ```
+
+  The new environment will be activated automatically. If not, `conda activate text-shortcuts`.
+
+- Install jupyterlab
+
+  ```bash
+  conda install jupyterlab
+  ```
+
+- Clone this project and in the root of the project folder, install dependencies
+
+  ```bash
+  jypl
+  ```
+
+- Install the extension
+
+  ```bash
+  jupyter labextension install . --no-build
+  ```
+
+- In a separate terminal, start up jupyter lab in watch mode. Don't forget to activate your virtual environment. If you want to use a different browser for development, specify that with the `--browser` switch. If you want to use a custom port, specify that with the `--port` switch.
+
+  ```bash
+  conda activate text-shortcuts
+  jupyter lab --watch --browser="chrome" --port=8889
+  ```
+
+Pull requests are welcome!
