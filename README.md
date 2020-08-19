@@ -71,7 +71,11 @@ It is strongly recommended that you set up a virtual Python environment. These i
   conda create --name text-shortcuts
   ```
 
-  The new environment will be activated automatically. If not, `conda activate text-shortcuts`.
+When this has completed, activate the new environment.
+
+  ```bash
+    conda activate text-shortcuts
+  ```
 
 - Install jupyterlab
 
@@ -79,10 +83,10 @@ It is strongly recommended that you set up a virtual Python environment. These i
   conda install jupyterlab
   ```
 
-- Clone this project and in the root of the project folder, install dependencies
+- Clone this project and in the root of the project folder, install dependencies with the JupyterLab Package Manager
 
   ```bash
-  jypl
+  jlpm
   ```
 
 - Install the extension
