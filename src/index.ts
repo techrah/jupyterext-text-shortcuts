@@ -12,6 +12,10 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
   const widget = tracker.currentWidget;
   if (!widget) return;
 
+  // If a kernel name is specified in args, compare with current kernel name.
+  const kernel = get('sessionContext.session.kernel', widget);
+  if (args.kernel && kernel.name !== args.kernel) return;
+
   const doc = get("content.activeCell.editor.doc", widget) as CodeMirror.Doc;
   if (!doc) return;
 
