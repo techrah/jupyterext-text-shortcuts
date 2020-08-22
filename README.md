@@ -29,32 +29,87 @@ Here are two useful shortcuts for programming in R:
 
 ```json
 {
-    "shortcuts": [
-        {
-            "command": "text-shortcuts:insert-text",
-            "args": {
-                "text": "%>%",
-                "autoPad": true
-            },
-            "keys": [
-                "Accel Shift M"
-            ],
-            "selector": "body"
-        },
-        {
-            "command": "text-shortcuts:insert-text",
-            "args": {
-                "text": "<-",
-                "autoPad": true
-            },
-            "keys": [
-                "Alt -"
-            ],
-            "selector": "body"
-        }
-    ]
+  "shortcuts": [
+    {
+      "command": "text-shortcuts:insert-text",
+      "args": {
+        "kernel": "ir",
+        "text": "%>%",
+        "autoPad": true
+      },
+      "keys": [
+        "Accel Shift M"
+      ],
+      "selector": "body"
+    },
+    {
+      "command": "text-shortcuts:insert-text",
+      "args": {
+        "kernel": "ir",
+        "text": "<-",
+        "autoPad": true
+      },
+      "keys": [
+        "Alt -"
+      ],
+      "selector": "body"
+    }
+  ]
 }
 ```
+
+**NOTE: As of version 0.1.x You do NOT need to add the above shortcuts to _User Preferences_ unless you want to override the default behaviour.** These two shortcuts are now installed by default. They can be found in _Keyboard Shortcuts / System Defaults_.
+
+<img width="830" alt="@techrah:text-shortcuts_default-shortcuts" src="https://user-images.githubusercontent.com/600471/90961403-86083e00-e45d-11ea-85d7-c98c2b1cd2c9.png">
+
+### Anatomy of a Text Shortcut
+
+```json
+{
+  "command": "text-shortcuts:insert-text"
+}
+```
+
+Identifies the keyboard shortcut as a text shortcut that is intercepted by this extension.
+
+```json
+{
+  "keys": [
+    "Accel Shift M"
+  ],
+}
+```
+
+`keys` is an array of keyboard shortcuts that activate the insertion of the text snippet. Each entry can be a combination of one or more of the following modifiers, ending with a text character. For example, "Accel Shift M" represents Command-Shift-M on macOS.
+
+- `Accel` : Command (macOS) / Ctrl (Windows)
+- `Alt`   : Option (macOS)  / Alt (Windows)
+- `Shift` : Shift
+- `Ctrl`  : Control
+
+```json
+{
+  "args": {
+    "kernel": "ir",
+    "text": "%>%",
+    "autoPad": true
+  }
+}
+```
+
+- `kernel` (optional): If you specify a `kernel`, the shortcut will only work in notebooks that are running the specified kernel. Examples of kernel names are `ir` for R and `ipython` for Python.
+
+- `text`: This is the actual text that you want inserted.
+
+- `autoPad`: (`true` | `false`). If `true`, will add spacing either before, after, or both before and after so that there is a single space on each side of the text.
+
+```json
+{
+  "selector": "body"
+}
+```
+
+CSS selector. Always use `"body"` for this extension.
 
 ## Development
 
@@ -65,16 +120,11 @@ Here are two useful shortcuts for programming in R:
 
 It is strongly recommended that you set up a virtual Python environment. These instructions will assume that Anaconda is already installed.
 
-- Create a new virtual environment
+- Create a new virtual environment and activate it.
 
   ```bash
   conda create --name text-shortcuts
-  ```
-
-When this has completed, activate the new environment.
-
-  ```bash
-    conda activate text-shortcuts
+  conda activate text-shortcuts
   ```
 
 - Install jupyterlab
@@ -95,11 +145,24 @@ When this has completed, activate the new environment.
   jupyter labextension install . --no-build
   ```
 
-- In a separate terminal, start up jupyter lab in watch mode. Don't forget to activate your virtual environment. If you want to use a different browser for development, specify that with the `--browser` switch. If you want to use a custom port, specify that with the `--port` switch.
+- Start up jupyter lab in watch mode. Don't forget to activate your virtual environment. If you want to use a different browser for development, specify that with the `--browser` switch. If you want to use a custom port, specify that with the `--port` switch.
 
   ```bash
   conda activate text-shortcuts
   jupyter lab --watch --browser="chrome" --port=8889
   ```
+
+- In another terminal, run the TypeScript compiler in watch mode.
+
+  ```bash
+  conda activate text-shortcuts
+  jlpm tsc -w
+  ```
+
+For more information on developing JupyterLab extensions, here are some helpful resources:
+
+- [Extension Developer Guide](https://jupyterlab.readthedocs.io/en/stable/developer/extension_dev.html)
+- [Common Extension Points: Keyboard Shortcuts](https://jupyterlab.readthedocs.io/en/stable/developer/extension_points.html#keyboard-shortcuts)
+- [JupyterLab Extensions by Examples](https://github.com/jupyterlab/extension-examples)
 
 Pull requests are welcome!
