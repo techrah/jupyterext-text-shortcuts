@@ -6,6 +6,8 @@ import {
 } from '@jupyterlab/application';
 import { INotebookTracker } from '@jupyterlab/notebook';
 
+const PLUGIN_ID = '@techrah/text-shortcuts:plugin';
+
 const insertText = (tracker: INotebookTracker) => (args: any) => {
   const widget = tracker.currentWidget;
   if (!widget) return;
@@ -42,7 +44,10 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
   doc.setCursor({ line: from.line, ch: from.ch + textToInsert.length });
 };
 
-const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {
+const handleActivation = (
+  app: JupyterFrontEnd,
+  tracker: INotebookTracker,
+) => {
   app.commands.addCommand("text-shortcuts:insert-text", {
     label: 'Insert Text',
     execute: insertText(tracker),
@@ -53,7 +58,7 @@ const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {
  * text-shortcuts extension.
  */
 const extension: JupyterFrontEndPlugin<void> = {
-  id: 'text-shortcuts',
+  id: PLUGIN_ID,
   autoStart: true,
   requires: [INotebookTracker],
   activate: handleActivation,
