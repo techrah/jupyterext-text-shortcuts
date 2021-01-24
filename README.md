@@ -64,7 +64,7 @@ Here are two useful shortcuts for programming in R:
 
 ### Anatomy of a Text Shortcut
 
-```json
+```
 {
   ...
   "command": "text-shortcuts:insert-text"
@@ -74,7 +74,7 @@ Here are two useful shortcuts for programming in R:
 
 Identifies the keyboard shortcut as a text shortcut that is intercepted by this extension.
 
-```json
+```
 {
   ...
   "keys": [
@@ -91,7 +91,7 @@ Identifies the keyboard shortcut as a text shortcut that is intercepted by this 
 - `Shift` : Shift
 - `Ctrl`  : Control
 
-```json
+```
 {
   ...
   "args": {
@@ -109,7 +109,7 @@ Identifies the keyboard shortcut as a text shortcut that is intercepted by this 
 
 - `autoPad`: (`true` | `false`). If `true`, will add spacing either before, after, or both before and after so that there is a single space on each side of the text.
 
-```json
+```
 {
   ...
   "selector": "body"
