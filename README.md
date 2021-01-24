@@ -6,7 +6,7 @@ A jupyterlab extension to insert text via keyboard shortcuts.
 
 ## Pre-requisites
 
-* JupyterLab
+* JupyterLab 1.1.3+, 2.x, 3.x
 * [node 5+](https://nodejs.org)
 
 ## Installation
@@ -64,19 +64,23 @@ Here are two useful shortcuts for programming in R:
 
 ### Anatomy of a Text Shortcut
 
-```json
+```
 {
+  ...
   "command": "text-shortcuts:insert-text"
+  ...
 }
 ```
 
 Identifies the keyboard shortcut as a text shortcut that is intercepted by this extension.
 
-```json
+```
 {
+  ...
   "keys": [
     "Accel Shift M"
   ],
+  ...
 }
 ```
 
@@ -87,25 +91,29 @@ Identifies the keyboard shortcut as a text shortcut that is intercepted by this 
 - `Shift` : Shift
 - `Ctrl`  : Control
 
-```json
+```
 {
+  ...
   "args": {
     "kernel": "ir",
     "text": "%>%",
     "autoPad": true
   }
+  ...
 }
 ```
 
-- `kernel` (optional): If you specify a `kernel`, the shortcut will only work in notebooks that are running the specified kernel. Examples of kernel names are `ir` for R and `ipython` for Python.
+- `kernel` (optional): If you specify a `kernel`, the shortcut will only work in notebooks that are running the specified kernel. Examples of kernel names are `ir` and `python3`. For a list of installed kernels, use `jupyter kernelspec list`.
 
 - `text`: This is the actual text that you want inserted.
 
 - `autoPad`: (`true` | `false`). If `true`, will add spacing either before, after, or both before and after so that there is a single space on each side of the text.
 
-```json
+```
 {
+  ...
   "selector": "body"
+  ...
 }
 ```
 
@@ -161,8 +169,16 @@ It is strongly recommended that you set up a virtual Python environment. These i
 
 For more information on developing JupyterLab extensions, here are some helpful resources:
 
-- [Extension Developer Guide](https://jupyterlab.readthedocs.io/en/stable/developer/extension_dev.html)
-- [Common Extension Points: Keyboard Shortcuts](https://jupyterlab.readthedocs.io/en/stable/developer/extension_points.html#keyboard-shortcuts)
-- [JupyterLab Extensions by Examples](https://github.com/jupyterlab/extension-examples)
+- [Extension Developer Guide][1]
+- [Common Extension Points: Keyboard Shortcuts][2]
+- [JupyterLab Extensions by Examples][3]
+- [CodeMirror: Document management methods][4]
+- [Interface INotebookTracker][5]
 
 Pull requests are welcome!
+
+[1]: https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html
+[2]: https://jupyterlab.readthedocs.io/en/stable/extension/extension_points.html#keyboard-shortcuts
+[3]: https://github.com/jupyterlab/extension-examples
+[4]: https://codemirror.net/doc/manual.html#api_doc
+[5]: https://jupyterlab.github.io/jupyterlab/interfaces/_notebook_src_index_.inotebooktracker.html
