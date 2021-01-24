@@ -177,8 +177,8 @@ For more information on developing JupyterLab extensions, here are some helpful 
 
 Pull requests are welcome!
 
-[1]: https://jupyterlab.readthedocs.io/en/stable/developer/extension_dev.html
-[2]: https://jupyterlab.readthedocs.io/en/stable/developer/extension_points.html#keyboard-shortcuts
+[1]: https://jupyterlab.readthedocs.io/en/stable/extension/extension_dev.html
+[2]: https://jupyterlab.readthedocs.io/en/stable/extension/extension_points.html#keyboard-shortcuts
 [3]: https://github.com/jupyterlab/extension-examples
 [4]: https://codemirror.net/doc/manual.html#api_doc
 [5]: https://jupyterlab.github.io/jupyterlab/interfaces/_notebook_src_index_.inotebooktracker.html
