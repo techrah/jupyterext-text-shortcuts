@@ -7,9 +7,9 @@
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/ryanhomer/jupyterext-text-shortcuts",
+  "homepage": "https://github.com/techrah/jupyterext-text-shortcuts",
   "bugs": {
-    "url": "https://github.com/ryanhomer/jupyterext-text-shortcuts/issues"
+    "url": "https://github.com/techrah/jupyterext-text-shortcuts/issues"
   },
   "license": "MIT",
   "author": "Ryan Homer",
@@ -23,7 +23,7 @@
   "style": "style/index.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryanhomer/jupyterext-text-shortcuts.git"
+    "url": "https://github.com/techrah/jupyterext-text-shortcuts.git"
   },
   "scripts": {
     "build": "tsc",
