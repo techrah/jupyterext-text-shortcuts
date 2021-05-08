@@ -2,7 +2,7 @@
 
 A jupyterlab extension to insert text via keyboard shortcuts.
 
-![release](https://github.com/ryanhomer/jupyterext-text-shortcuts/workflows/release/badge.svg?branch=master)
+![release](https://github.com/techrah/jupyterext-text-shortcuts/workflows/release/badge.svg?branch=master)
 
 ## Pre-requisites
 
