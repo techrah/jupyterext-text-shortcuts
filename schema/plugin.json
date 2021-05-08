@@ -1,32 +1,28 @@
 {
-  "title": "Text Shortcuts",
-  "description": "Text Shortcuts plugin settings.",
-  "type": "object",
-  "jupyter.lab.shortcuts": [
-    {
-      "command": "text-shortcuts:insert-text",
-      "args": {
-        "kernel": "ir",
-        "text": "%>%",
-        "autoPad": true
-      },
-      "keys": [
-        "Accel Shift M"
-      ],
-      "selector": "body"
-    },
-    {
-      "command": "text-shortcuts:insert-text",
-      "args": {
-        "kernel": "ir",
-        "text": "<-",
-        "autoPad": true
-      },
-      "keys": [
-        "Alt -"
-      ],
-      "selector": "body"
-    }
-  ],
-  "properties": {}
+    "title": "Text Shortcuts",
+    "description": "Text Shortcuts plugin settings.",
+    "type": "object",
+    "jupyter.lab.shortcuts": [
+        {
+            "command": "text-shortcuts:insert-text",
+            "args": {
+                "kernel": "ir",
+                "text": "%>%",
+                "autoPad": true
+            },
+            "keys": ["Accel Shift M"],
+            "selector": "body"
+        },
+        {
+            "command": "text-shortcuts:insert-text",
+            "args": {
+                "kernel": "ir",
+                "text": "<-",
+                "autoPad": true
+            },
+            "keys": ["Alt -"],
+            "selector": "body"
+        }
+    ],
+    "properties": {}
 }

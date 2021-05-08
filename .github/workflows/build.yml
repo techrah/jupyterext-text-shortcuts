@@ -1,38 +1,38 @@
 name: build
 
 on:
-  push:
-    branches:
-      - '**'        # matches every branch
-      - '!master'   # excludes master
+    push:
+        branches:
+            - "**" # matches every branch
+            - "!master" # excludes master
 
 jobs:
-  build:
-    runs-on: ubuntu-18.04
+    build:
+        runs-on: ubuntu-18.04
 
-    name: n${{ matrix.node-version }}/py${{ matrix.python-version }}/j${{ matrix.jupyterlab-version}}
+        name: n${{ matrix.node-version }}/py${{ matrix.python-version }}/j${{ matrix.jupyterlab-version}}
 
-    strategy:
-      matrix:
-        node-version: [11, 12]
-        python-version: [3.7, 3.8]
-        jupyterlab-version: ['>=2.0.0,<4.0.0']
+        strategy:
+            matrix:
+                node-version: [11, 12]
+                python-version: [3.7, 3.8]
+                jupyterlab-version: [">=2.0.0,<4.0.0"]
 
-    steps:
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+        steps:
+            - name: Install node
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: Install Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version }}
+            - name: Install Python
+              uses: actions/setup-python@v1
+              with:
+                  python-version: ${{ matrix.python-version }}
 
-      - name: Install jupyterlab
-        run: python -m pip install "jupyterlab${{ matrix.jupyterlab-version }}"
+            - name: Install jupyterlab
+              run: python -m pip install "jupyterlab${{ matrix.jupyterlab-version }}"
 
-      - uses: actions/checkout@v1
+            - uses: actions/checkout@v1
 
-      - name: Install JS dependencies and build
-        run: jlpm
+            - name: Install JS dependencies and build
+              run: jlpm
