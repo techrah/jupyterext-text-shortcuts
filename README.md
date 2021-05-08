@@ -6,8 +6,8 @@ A jupyterlab extension to insert text via keyboard shortcuts.
 
 ## Pre-requisites
 
-* JupyterLab 1.1.3+, 2.x, 3.x
-* [node 5+](https://nodejs.org)
+- JupyterLab 1.1.3+, 2.x, 3.x
+- [node 5+](https://nodejs.org)
 
 ## Installation
 
@@ -37,9 +37,7 @@ Here are two useful shortcuts for programming in R:
         "text": "%>%",
         "autoPad": true
       },
-      "keys": [
-        "Accel Shift M"
-      ],
+      "keys": ["Accel Shift M"],
       "selector": "body"
     },
     {
@@ -49,9 +47,7 @@ Here are two useful shortcuts for programming in R:
         "text": "<-",
         "autoPad": true
       },
-      "keys": [
-        "Alt -"
-      ],
+      "keys": ["Alt -"],
       "selector": "body"
     }
   ]
@@ -87,9 +83,9 @@ Identifies the keyboard shortcut as a text shortcut that is intercepted by this 
 `keys` is an array of keyboard shortcuts that activate the insertion of the text snippet. Each entry can be a combination of one or more of the following modifiers, ending with a text character. For example, "Accel Shift M" represents Command-Shift-M on macOS.
 
 - `Accel` : Command (macOS) / Ctrl (Windows)
-- `Alt`   : Option (macOS)  / Alt (Windows)
+- `Alt` : Option (macOS) / Alt (Windows)
 - `Shift` : Shift
-- `Ctrl`  : Control
+- `Ctrl` : Control
 
 ```
 {
