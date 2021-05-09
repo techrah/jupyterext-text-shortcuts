@@ -6,8 +6,8 @@ A jupyterlab extension to insert text via keyboard shortcuts.
 
 ## Pre-requisites
 
--   JupyterLab 1.1.3+, 2.x, 3.x
--   [node 5+](https://nodejs.org)
+-   JupyterLab 2.x, 3.x
+-   [node 12+](https://nodejs.org)
 
 ## Installation
 
