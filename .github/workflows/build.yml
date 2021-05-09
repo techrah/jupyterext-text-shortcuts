@@ -34,5 +34,8 @@ jobs:
 
             - uses: actions/checkout@v1
 
-            - name: Install JS dependencies and build
-              run: jlpm
+            - name: Install JS dependencies, build & test
+              run: |
+                  jlpm --frozen-lockfile
+                  jlpm prepare
+                  jlpm test
