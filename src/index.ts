@@ -5,6 +5,7 @@ import {
     JupyterFrontEndPlugin,
 } from "@jupyterlab/application";
 import { INotebookTracker } from "@jupyterlab/notebook";
+import { getPaddedTextToInsert } from "./utils";
 
 const PLUGIN_ID = "@techrah/text-shortcuts:plugin";
 
@@ -19,41 +20,10 @@ const insertText = (tracker: INotebookTracker) => (args: any) => {
     const doc = get("content.activeCell.editor.doc", widget) as CodeMirror.Doc;
     if (!doc) return;
 
-    const selectionBefore = doc.getSelection();
-    const from = doc.getCursor("from");
-    const to = doc.getCursor("to");
-    const anchor = doc.getCursor("anchor");
-    const lineLength = doc.getLine(anchor.line).length;
-
     const { text, autoPad } = args;
-    const textToInsert = autoPad ? ` ${text} ` : text;
+    const insertionText = autoPad ? getPaddedTextToInsert(doc, text) : text;
 
-    if (autoPad)
-        doc.extendSelection(
-            { ...from, ch: from.ch - 1 },
-            { ...to, ch: to.ch + 1 }
-        );
-
-    // Determine replacementText by adjust padding based on text selection
-    const selectionAfter = doc.getSelection();
-    let replacementText;
-    if (selectionBefore.length === 0) {
-        if (anchor.ch == 0)
-            replacementText = `${textToInsert}${selectionAfter}`;
-        else if (anchor.ch == lineLength)
-            replacementText = `${selectionAfter}${textToInsert}`;
-        else
-            replacementText = `${selectionAfter.charAt(
-                0
-            )}${textToInsert}${selectionAfter.charAt(1)}`;
-    } else {
-        replacementText = selectionAfter.replace(selectionBefore, textToInsert);
-    }
-    replacementText = replacementText.replace(/^[ ]([ ].*)$/, "$1");
-    replacementText = replacementText.replace(/^(.*[ ])[ ]$/, "$1");
-
-    doc.replaceSelection(replacementText);
-    doc.setCursor({ line: from.line, ch: from.ch + textToInsert.length });
+    doc.replaceSelection(insertionText);
 };
 
 const handleActivation = (app: JupyterFrontEnd, tracker: INotebookTracker) => {

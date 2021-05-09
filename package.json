@@ -14,7 +14,7 @@
     "license": "MIT",
     "author": "Ryan Homer",
     "files": [
-        "lib/**/*.{d.ts, js}",
+        "lib/**/*.{d.ts,js}",
         "style/**/*.css",
         "schema/**/*.json"
     ],
