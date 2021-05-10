@@ -1,6 +1,6 @@
 {
     "name": "@techrah/text-shortcuts",
-    "version": "0.1.22",
+    "version": "0.1.23",
     "description": "Insert text via shortcut keys in Jupyter Lab.",
     "keywords": [
         "jupyter",
