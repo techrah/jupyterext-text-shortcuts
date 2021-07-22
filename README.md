@@ -34,7 +34,7 @@ Here are two useful shortcuts for programming in R:
             "command": "text-shortcuts:insert-text",
             "args": {
                 "kernel": "ir",
-                "text": "%>%",
+                "text": "|>",
                 "autoPad": true
             },
             "keys": ["Accel Shift M"],
@@ -92,7 +92,7 @@ Identifies the keyboard shortcut as a text shortcut that is intercepted by this 
     ...
     "args": {
         "kernel": "ir",
-        "text": "%>%",
+        "text": "|>",
         "autoPad": true
     }
     ...
