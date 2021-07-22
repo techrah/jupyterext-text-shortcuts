@@ -7,7 +7,7 @@
             "command": "text-shortcuts:insert-text",
             "args": {
                 "kernel": "ir",
-                "text": "%>%",
+                "text": "|>",
                 "autoPad": true
             },
             "keys": ["Accel Shift M"],
