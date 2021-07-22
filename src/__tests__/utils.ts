@@ -8,7 +8,7 @@ describe("getPaddedTextToInsert", () => {
         "The quick brown fox jumps over the lazy dog." +
         "\nThis is line two." +
         "\nThis is line three.";
-    const textToInsert = "%>%";
+    const textToInsert = "|>";
     const textToInsertLeftPadded = ` ${textToInsert}`;
     const textToInsertRightPadded = `${textToInsert} `;
     const textToInsertPadded = ` ${textToInsert} `;
