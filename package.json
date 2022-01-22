@@ -33,9 +33,9 @@
         "watch": "tsc -w"
     },
     "dependencies": {
-        "@jupyterlab/application": "^2.3.0 || ^3.0.0",
-        "@jupyterlab/codemirror": "^2.3.0 || ^3.0.0",
-        "@jupyterlab/notebook": "^2.3.0 || ^3.0.0",
+        "@jupyterlab/application": "^3.0.0",
+        "@jupyterlab/codemirror": "^3.0.0",
+        "@jupyterlab/notebook": "^3.0.0",
         "lodash": "4.17.21"
     },
     "devDependencies": {
